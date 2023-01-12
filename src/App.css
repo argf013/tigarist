@@ -1,0 +1,22 @@
+html {
+  cursor: auto;
+}
+
+.row {
+  margin-top: 1.5rem!important;
+  margin-right: auto!important;
+  margin-left: auto!important;
+}
+
+.card {
+  min-width: 10rem;
+  min-height: 20rem;
+  margin-bottom: 1.5rem!important;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+footer {
+  background-color: rgb(33,37,41);
+  color: antiquewhite;
+  cursor: auto;
+}
