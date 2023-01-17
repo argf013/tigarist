@@ -20,3 +20,8 @@ footer {
   color: antiquewhite;
   cursor: auto;
 }
+
+.link_to_song {
+ text-decoration: none;
+ color: inherit;
+}

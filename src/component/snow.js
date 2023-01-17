@@ -1,4 +1,3 @@
-import '../snow.css'
 const snowy = document.getElementById('snowy');
 const loop = () => {
     for (let i = 0; i < 10; i++) {
