@@ -5,7 +5,7 @@ import Credit from "../component/Credit";
 // import Lyric1 from "../component/data";
 const Song1 = () => {
     return <div className="song1">
-        <h1 className="song_title" id="main">Can I Still Get Into The Fluffy Little Place In Your Heart?</h1>
+        <h1 className="song_title" id="main">"Can I Still Get Into The Fluffy Little Place In Your Heart?"</h1>
         <img className="thumbnail" src="https://i.scdn.co/image/ab67616d00001e02466b641e27713881d3f8e2c7" alt="Can I Still Get Into The Fluffy Little Place In Your Heart?">
         </img>
         <hr/>

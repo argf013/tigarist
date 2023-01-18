@@ -5,7 +5,7 @@ import Credit from "../component/Credit";
 
 const Song2 = () => {
     return <div className="song2">
-    <h1 className="song_title" id="main">Honesty & Falsity</h1>
+    <h1 className="song_title" id="main">"Honesty & Falsity"</h1>
     <img className="thumbnail" src="https://i.scdn.co/image/ab67616d00001e0298225b3d50907e025113a67a" alt="Honesty & Falsity">
     </img>
     <hr/>
