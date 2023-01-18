@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/App.css';
 import Cards from './component/card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -14,12 +15,12 @@ function Contents() {
         <Col><Cards title="Can I Still Get Into The..." desc="2022 • Single" 
         img="https://i.scdn.co/image/ab67616d00001e02466b641e27713881d3f8e2c7"
         phd="Can I Still Get into the Fluffy Little Place in Your Heart?"
-        link="/Song1"
+        link="/song1"
         /></Col>
         <Col><Cards title="Honesty & Falsity" desc="2022 • Single" 
         img="https://i.scdn.co/image/ab67616d00001e0298225b3d50907e025113a67a"
         phd="Honesty & Falsity"
-        link="/Song2"
+        link="/song2"
         /></Col>
       </Row>
     </Container>

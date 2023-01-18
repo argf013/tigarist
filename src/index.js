@@ -4,7 +4,6 @@ import './styles/badge.css';
 import './styles/index.css';
 import './styles/navibar.css';
 import './styles/snow.css';
-import './styles/App.css';
 import './styles/Songs.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
