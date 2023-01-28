@@ -11,9 +11,12 @@ import Home from './pages/Home';
 import Song1 from './pages/Song1';
 import Layout from './pages/Layout';
 import Song2 from './pages/Song2';
+import ScrollToTop from './utils/ScrollToTop';
+
 export default function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
