@@ -1,9 +1,10 @@
 import React from "react";
 import App from '../App'
-import UncontrolledExample from "../component/carousel"
+import Hero from "../component/Hero";
+
 const Home = () => {
     return <div className="home">
-        <UncontrolledExample/>
+        <Hero />
         <App/>
     </div>
     ;
