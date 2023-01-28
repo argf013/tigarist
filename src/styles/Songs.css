@@ -1,0 +1,56 @@
+.song_title {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.thumbnail {
+    margin: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.lyrics {
+    text-align: center;
+    white-space: pre;
+    font-size: 10pt;
+}
+
+/* .lyric {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.heading_lyric {
+    padding-top: 1rem;
+    text-align: center;
+} */
+
+.back {
+    margin: auto;
+    display: block;
+}
+
+.btnback {
+    display: block;
+    margin: auto;
+    width: 4rem;
+}
+
+.link_style {
+    text-decoration: none;
+    color: white;
+}
+
+.credit {
+    margin-top: 1.5rem!important;
+    width: 18rem;
+    /* min-width: 10rem; */
+    min-height: auto!important;
+    margin-bottom: 1.5rem!important;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    margin: auto;
+}
+
+.credit_title {
+    text-align: center!important;
+}

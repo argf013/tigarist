@@ -1,6 +1,3 @@
-html {
-  cursor: auto;
-}
 
 .row {
   margin-top: 1.5rem!important;
@@ -18,5 +15,24 @@ html {
 footer {
   background-color: rgb(33,37,41);
   color: antiquewhite;
-  cursor: auto;
+}
+
+.link_to_song {
+ text-decoration: none;
+ color: inherit;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #71C9EF;
+  z-index:1;
+}
+
+.card-img-top{
+  position:relative;
+  z-index:0;
 }

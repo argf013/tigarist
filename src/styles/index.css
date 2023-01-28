@@ -19,3 +19,29 @@ code {
 .me-2 {
   border-radius: 50%;
 }
+
+.upBtn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999; 
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
+.downBtn{
+  position: fixed;
+  bottom: 20px;
+  right: 60px;
+  z-index: 999; 
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+
+.btn-primary {
+  background-color: #71C9EF!important ;
+  border: none;
+  color: black;
+}
