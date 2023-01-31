@@ -1,3 +1,3 @@
 # Tigarist
 ## Web app with react
-> deploy: tigarist.web.app
+> Live preview: tiqarist.web.app
