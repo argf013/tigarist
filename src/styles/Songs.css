@@ -9,21 +9,16 @@
     border-radius: 10px;
 }
 
+.thumbnail:hover {
+    transform: rotate(360deg);
+    transition: all 1s ease-in-out;
+}
+
 .lyrics {
     text-align: center;
     white-space: pre;
-    font-size: 10pt;
+    font-size: 15px;
 }
-
-/* .lyric {
-    display: block;
-    margin: auto;
-    text-align: center;
-}
-.heading_lyric {
-    padding-top: 1rem;
-    text-align: center;
-} */
 
 .back {
     margin: auto;

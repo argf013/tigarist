@@ -2,3 +2,9 @@
   max-width: 100%;
   height: auto;
 }
+
+.hero-container {
+  text-align: center!important;
+  margin: 0!important;
+  display: block!important;
+}

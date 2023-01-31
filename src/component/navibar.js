@@ -20,9 +20,9 @@ const Navibar = () => {
       };
 }
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar fixed="top" collapseOnSelect expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">Tigarist</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -30,10 +30,10 @@ const Navibar = () => {
           </Nav>
           <Nav>
           <NavLink href="https://www.instagram.com/tiqarist" target="_blank">
-                <i class="bi bi-instagram"></i>
+                <i className="bi bi-instagram"></i>
             </NavLink>
             <NavLink href="https://www.youtube.com/channel/UCdQS8K39CpakBfQ1lx7idwg" target="_blank">
-                <i class="bi bi-youtube"></i>
+                <i className="bi bi-youtube"></i>
             </NavLink>
             <Nav.Link onClick={btn} href="#">❅</Nav.Link>
           </Nav>
