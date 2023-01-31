@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Credit from "../component/Credit";
 // import Lyrics2 from "../component/Lyrics2";
 
 const Song2 = () => {
+    const [, setShowMessage] = useState(false);
     return <div className="song2">
         <h1 className="song_title" id="main">"Honesty & Falsity"</h1>
-        <img className="thumbnail" src="https://i.scdn.co/image/ab67616d00001e0298225b3d50907e025113a67a" alt="Honesty & Falsity" />
+        <img
+            className="thumbnail"
+            src="https://i.scdn.co/image/ab67616d00001e0298225b3d50907e025113a67a"
+            alt="Honesty & Falsity" 
+            onMouseOver={() => setShowMessage(true)}
+            onMouseOut={() => {
+                setShowMessage(false);
+                alert("Njir easter egg");
+            }}
+        />
+        
         <hr />
         <h2 style={{ textAlign: 'center' }}>Lyrics</h2><br />
         <p className="lyrics">

@@ -3,9 +3,9 @@ import Badge from 'react-bootstrap/Badge';
 function BasicExample() {
   return (
     <div className='heading albums' id='discography'>
-      <h2>
+      <h1>
         <Badge bg="dark">Discography</Badge>
-      </h2>
+      </h1>
     </div>
   );
 }

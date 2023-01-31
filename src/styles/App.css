@@ -1,6 +1,6 @@
 
 .row {
-  margin-top: 1.5rem!important;
+  margin-top: 4rem!important;
   margin-right: auto!important;
   margin-left: auto!important;
 }
@@ -13,8 +13,16 @@
 }
 
 footer {
-  background-color: rgb(33,37,41);
+  background-color: black;
   color: antiquewhite;
+}
+
+.footerText {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-align: center;
 }
 
 .link_to_song {
@@ -35,4 +43,38 @@ footer {
 .card-img-top{
   position:relative;
   z-index:0;
+}
+
+@media only screen and (max-width: 500px) {
+  .card {
+    min-width: 20rem;
+  }
+
+  .lyrics {
+    font-size: 12px;
+  }
+
+  .upBtn{
+    display: none;  
+  }
+  
+  .downBtn{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .card {
+    min-width: 10rem;
+  }
+  .lyrics {
+    font-size: 10px;
+  }
+  .upBtn{
+    display: none;  
+  }
+  
+  .downBtn{
+    display: none;
+  }
 }

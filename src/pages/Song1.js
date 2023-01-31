@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Credit from "../component/Credit";
 
 const Song1 = () => {
+    const [, setShowMessage] = useState(false);
     return <div className="song1">
         <h1 className="song_title" id="main">"Can I Still Get Into The Fluffy Little Space In Your Heart?"</h1>
         <img
             className="thumbnail"
+            id="thumbnail"
             src="https://i.scdn.co/image/ab67616d00001e02466b641e27713881d3f8e2c7"
             alt="Can I Still Get Into The Fluffy Little Space In Your Heart?"
+            onMouseOver={() => setShowMessage(true)}
+            onMouseOut={() => {
+                setShowMessage(false);
+                alert("Njir easter egg");
+            }}
         />
         <hr />
         <h2 style={{ textAlign: 'center' }}>Lyrics</h2><br />
