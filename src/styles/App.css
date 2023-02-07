@@ -1,3 +1,18 @@
+.carousel-item {
+  animation: slideInLeft; 
+  animation-duration: 5s; 
+}
+
+@media (max-width: 767px) {
+  .carousel-item img {
+    width: 100%!important;
+  }
+
+  .avail_logo {
+    width: 50px!important;
+  }
+}
+
 
 .row {
   margin-top: 4rem!important;
