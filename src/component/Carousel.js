@@ -17,7 +17,7 @@ const Carousel = () => {
             } else {
                 setIndex(index + 1);
             }
-        }, 4000);
+        }, 7000);
         return () => clearInterval(interval);
     }, [images.length, index]);
 
@@ -43,7 +43,7 @@ const Carousel = () => {
                 {images.map((image, i) => (
                     <div
                         key={i}
-                        className={`carousel-item ${index === i ? "active" : ""}`}
+                        className={`carousel-item animate__animated ${index === i ? "active" : ""}`}
                     >
                         <img src={image} className="d-block w-50 mx-auto" alt="tigarist" />
                     </div>
