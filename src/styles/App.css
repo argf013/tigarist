@@ -1,3 +1,17 @@
+.carousel-item {
+  transition: transform 0.6s ease!important;
+}
+
+@media (max-width: 767px) {
+  .carousel-item img {
+    width: 100%!important;
+  }
+
+  .avail_logo {
+    width: 50px!important;
+  }
+}
+
 
 .row {
   margin-top: 4rem!important;
