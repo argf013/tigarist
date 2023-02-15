@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import React from "react";
-import '../styles/Hero.css'
-import { ThreeDots as Loader } from "react-loader-spinner";
+import React from 'react';
+import '../styles/Hero.css';
+import { ThreeDots as Loader } from 'react-loader-spinner';
 
-const Hero = () => {
+function Hero() {
   const [isImageLoaded, setIsImageLoaded] = React.useState(false);
   const [hasError, setHasError] = React.useState(false);
 
@@ -27,6 +27,6 @@ const Hero = () => {
       {hasError && <p>Failed to load image</p>}
     </div>
   );
-};
+}
 
 export default Hero;
