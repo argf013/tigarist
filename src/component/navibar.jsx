@@ -5,16 +5,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavLink } from 'react-bootstrap';
 
+const snowy = document.getElementById('snowy');
 function Navibar() {
   useEffect(() => {
-    const snowy = document.getElementById('snowy');
     for (let i = 0; i < 10; i++) {
       snowy.innerHTML += '<div class="snowflake">❅</div>';
     }
   }, []);
-
+  snowy.style.display = 'none';
   const btn = () => {
-    const snowy = document.getElementById('snowy');
     if (snowy.style.display === 'none') {
       snowy.style.display = 'block';
     } else {

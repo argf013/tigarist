@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/badge.css';
@@ -5,8 +7,8 @@ import './styles/index.css';
 import './styles/navibar.css';
 import './styles/snow.css';
 import './styles/Songs.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Song1 from './pages/Song1';
 import Layout from './pages/Layout';
@@ -16,7 +18,7 @@ import ScrollToTop from './utils/ScrollToTop';
 export default function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -32,4 +34,3 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);
 
 serviceWorkerRegistration.register();
-

@@ -1,8 +1,8 @@
-.carousel-item {
-  /* animation: slideInLeft;  */
-  animation-duration: 5s; 
-}
 
+
+.carousel-indicators {
+  display: none;
+}
 @media (max-width: 767px) {
   .carousel-item img {
     width: 100%!important;
