@@ -15,6 +15,7 @@
 }
 
 .lyrics {
+    margin-top: 1.5em;
     text-align: center;
     white-space: pre;
     font-size: 15px;

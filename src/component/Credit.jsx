@@ -4,16 +4,15 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardText,
-  MDBCardHeader
+  MDBCardHeader,
 } from 'mdb-react-ui-kit';
 
 export default function Credit() {
   return (
-    <>
-    <MDBCard alignment='left' className='credit'>
-      <MDBCardHeader className='credit_title'><MDBCardTitle>Credit</MDBCardTitle></MDBCardHeader>
+    <MDBCard alignment="left" className="credit">
+      <MDBCardHeader className="credit_title"><MDBCardTitle>Credit</MDBCardTitle></MDBCardHeader>
       <MDBCardBody>
-      <MDBCardTitle>Performer</MDBCardTitle>
+        <MDBCardTitle>Performer</MDBCardTitle>
         <MDBCardText>Tigarist</MDBCardText>
         <MDBCardTitle>Writers</MDBCardTitle>
         <MDBCardText>Zulfan Rahman</MDBCardText>
@@ -23,6 +22,5 @@ export default function Credit() {
         <MDBCardText>Balconist</MDBCardText>
       </MDBCardBody>
     </MDBCard>
-    </>
   );
 }
