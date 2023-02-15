@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Contents from '../component/Contents';
 import DarkCarousel from '../component/Carousel';
 // import Footer from "../component/Footer";
@@ -6,6 +6,10 @@ import DarkCarousel from '../component/Carousel';
 import Navibar from '../component/navibar';
 
 function Home() {
+  useEffect(() => {
+    document.title = 'Tigarist';
+  }, []);
+
   return (
     <div className="home">
       <Navibar />

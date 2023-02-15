@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import Credit from '../component/Credit';
@@ -7,6 +7,9 @@ import data from '../DATA.json';
 
 const song = data.tigarist.song2;
 function Song2() {
+  useEffect(() => {
+    document.title = `${song.title}`;
+  }, []);
   const lyrics = song.lyrics.join('\n');
   return (
     <div className="song2">

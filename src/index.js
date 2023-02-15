@@ -14,6 +14,7 @@ import Song1 from './pages/Song1';
 import Layout from './pages/Layout';
 import Song2 from './pages/Song2';
 import ScrollToTop from './utils/ScrollToTop';
+import NoPage from './pages/NoPage';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="song1" element={<Song1 />} />
           <Route path="song2" element={<Song2 />} />
+          <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
