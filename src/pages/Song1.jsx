@@ -5,16 +5,17 @@ import { Link } from 'react-router-dom';
 import Credit from '../component/Credit';
 import data from '../DATA.json';
 
+const song = data.tigarist.song1;
 function Song1() {
-  const lyrics = data.tigarist.song1.lyrics.join('\n');
+  const lyrics = song.lyrics.join('\n');
   return (
     <div className="song1">
-      <h1 className="song_title" id="main">{data.tigarist.song1.title}</h1>
+      <h1 className="song_title" id="main">{song.title}</h1>
       <img
         className="thumbnail"
         id="thumbnail"
-        src="https://i.scdn.co/image/ab67616d00001e02466b641e27713881d3f8e2c7"
-        alt={data.tigarist.song1.title}
+        src={song.thumbnail}
+        alt={song.title}
       />
       <hr />
       <h2 style={{ textAlign: 'center' }}>Lyrics</h2>

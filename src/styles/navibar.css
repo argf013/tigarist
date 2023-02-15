@@ -1,3 +1,16 @@
 .navbar-toggler {
     border-color: transparent;
 }
+
+.navbar-toggler {
+    color: transparent;
+}
+
+.navbar {
+    background-color: white;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.navbar.shadow {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1)!important;
+}

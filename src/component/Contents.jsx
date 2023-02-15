@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import React from 'react';
 import '../styles/App.css';
 import Container from 'react-bootstrap/Container';
@@ -6,6 +7,13 @@ import Col from 'react-bootstrap/Col';
 import Cards from './card';
 import BasicExample from './badge';
 import Avail from './Avail';
+import data from '../DATA.json';
+
+const firstSong = data.tigarist.song1;
+const secSong = data.tigarist.song2;
+const notAvailable = () => {
+  alert('Not Available Yet');
+};
 
 function Contents() {
   return (
@@ -15,10 +23,10 @@ function Contents() {
       <Row xl={4}>
         <Col>
           <Cards
-            title="Can I Still..."
-            desc="2022 • Single"
-            img="https://i.scdn.co/image/ab67616d00001e02466b641e27713881d3f8e2c7"
-            phd="Can I Still Get into the Fluffy Little Place in Your Heart?"
+            title={firstSong.title}
+            desc={`${firstSong.type} • ${firstSong.releaseDate}`}
+            img={firstSong.thumbnail}
+            phd={firstSong.title}
             link="/song1"
             btnTxt="Read More"
           />
@@ -26,10 +34,10 @@ function Contents() {
 
         <Col>
           <Cards
-            title="Honesty & Falsity"
-            desc="2022 • Single"
-            img="https://i.scdn.co/image/ab67616d00001e0298225b3d50907e025113a67a"
-            phd="Honesty & Falsity"
+            title={secSong.title}
+            desc={`${secSong.type} • ${secSong.releaseDate}`}
+            img={secSong.thumbnail}
+            phd={secSong.title}
             link="/song2"
             btnTxt="Read More"
           />
@@ -43,6 +51,7 @@ function Contents() {
             phd="Untitled"
             link="/"
             btnTxt="Unavailable"
+            notAvailable={notAvailable}
           />
         </Col>
 
@@ -54,6 +63,7 @@ function Contents() {
             phd="Untitled"
             link="/"
             btnTxt="Unavailable"
+            notAvailable={notAvailable}
           />
         </Col>
       </Row>

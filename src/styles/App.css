@@ -3,6 +3,7 @@
 .carousel-indicators {
   display: none;
 }
+
 @media (max-width: 767px) {
   .carousel-item img {
     width: 100%!important;
@@ -45,20 +46,6 @@ footer {
  color: inherit;
 }
 
-.mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #71C9EF;
-  z-index:1;
-}
-
-.card-img-top{
-  position:relative;
-  z-index:0;
-}
 
 @media only screen and (max-width: 500px) {
   .card {

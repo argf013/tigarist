@@ -5,20 +5,20 @@ import { Button } from 'react-bootstrap';
 import Credit from '../component/Credit';
 import data from '../DATA.json';
 
+const song = data.tigarist.song2;
 function Song2() {
-  const lyrics = data.tigarist.song2.lyrics.join('\n');
+  const lyrics = song.lyrics.join('\n');
   return (
     <div className="song2">
-      <h1 className="song_title" id="main">{data.tigarist.song2.title}</h1>
+      <h1 className="song_title" id="main">{song.title}</h1>
       <img
         className="thumbnail"
-        src="https://i.scdn.co/image/ab67616d00001e0298225b3d50907e025113a67a"
-        alt={data.tigarist.song2.title}
+        src={song.thumbnail}
+        alt={song.title}
       />
 
       <hr />
       <h2 style={{ textAlign: 'center' }}>Lyrics</h2>
-      <br />
       <p className="lyrics">{lyrics}</p>
       <hr />
       <Credit />
