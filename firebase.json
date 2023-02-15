@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "tigarist",
     "public": "build",
     "ignore": [
       "firebase.json",
