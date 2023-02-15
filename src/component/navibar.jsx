@@ -1,44 +1,45 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+/* eslint-disable no-plusplus */
+import React, { useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import loop from "./snow";
-import { NavLink } from "react-bootstrap";
-import { Link } from "react-router-dom";
-const snowy = document.getElementById('snowy');
+import { NavLink } from 'react-bootstrap';
 
+function Navibar() {
+  useEffect(() => {
+    const snowy = document.getElementById('snowy');
+    for (let i = 0; i < 10; i++) {
+      snowy.innerHTML += '<div class="snowflake">❅</div>';
+    }
+  }, []);
 
-const Navibar = () => {
-  loop();
-  snowy.style.display = 'none';
   const btn = () => {
+    const snowy = document.getElementById('snowy');
     if (snowy.style.display === 'none') {
       snowy.style.display = 'block';
     } else {
       snowy.style.display = 'none';
-      };
-}
+    }
+  };
+
   return (
     <Navbar fixed="top" collapseOnSelect expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            
-          </Nav>
+          <Nav className="me-auto" />
           <Nav>
-          <NavLink href="https://www.instagram.com/tiqarist" target="_blank">
-                <i className="bi bi-instagram"></i>
+            <NavLink href="https://www.instagram.com/tiqarist" target="_blank">
+              <i className="bi bi-instagram" />
             </NavLink>
             <NavLink href="https://www.youtube.com/channel/UCdQS8K39CpakBfQ1lx7idwg" target="_blank">
-                <i className="bi bi-youtube"></i>
+              <i className="bi bi-youtube" />
             </NavLink>
             <Nav.Link onClick={btn} href="#">❅</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
+      <div id="snowy" />
     </Navbar>
   );
 }
