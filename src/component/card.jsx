@@ -19,7 +19,7 @@ function Cards(
           whiteSpace: 'nowrap',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
-          maxWidth: '20ch',
+          maxWidth: '15ch',
         }}
         >
           {props.title}
