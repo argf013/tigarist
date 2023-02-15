@@ -1,5 +1,5 @@
 /* eslint-disable no-plusplus */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -7,6 +7,21 @@ import { NavLink } from 'react-bootstrap';
 
 const snowy = document.getElementById('snowy');
 function Navibar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window.pageYOffset;
+      if (currentPosition > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useEffect(() => {
     for (let i = 0; i < 10; i++) {
       snowy.innerHTML += '<div class="snowflake">❅</div>';
@@ -22,7 +37,7 @@ function Navibar() {
   };
 
   return (
-    <Navbar fixed="top" collapseOnSelect expand="lg">
+    <Navbar fixed="top" collapseOnSelect expand="lg" className={isScrolled ? 'shadow' : ''}>
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

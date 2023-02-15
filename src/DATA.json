@@ -1,16 +1,24 @@
 {
     "tigarist": {
         "song1": {
-            "title": "Can I still get into the fluffy little space in your heart?",
+            "id": 1,
+            "title": "Can I Still Get into the Fluffy Little Space in Your Heart?",
             "lyrics": [
                 "All of these eyes are into you\nAnd I like how you are\nSo unaware of it\nYou're just like an abstract palette\nI don't know why\n\nI thought the star is too shy to come out\nCause you're full of beauty\nBut I forgot it's Jakarta skies\nSo, pollutions, you know?\nBut it's okay my knee still hurts anyway\n\nAlthough you're just sittin' there\nBut it feels like you got the power to make me buy you roses\nYet I can't do anything with this empty wallet\nCan I still get into the fluffy little space in your heart?\n\nMust be nice\nIf you become my new queen\nEven though\nI know my imagination\nWill only tattoo\nA wound in my heart\n\nI know you're just sittin' there\nBut it feels like you got the power to make me fall in love oh\nCan I still get into the fluffy little space in your?"
-            ]
+            ],
+            "releaseDate": 2022,
+            "type": "Single",
+            "thumbnail": "https://i.scdn.co/image/ab67616d00001e02466b641e27713881d3f8e2c7"
         },
         "song2": {
+            "id": 2,
             "title": "Honesty & Falsity",
             "lyrics": [
                 "Girl, you look like an aloe vera, i mean\nI like how your blouse suits your brown eyes\nYou want me to be honest\nBut if i did\nWon't it be boring?\n\nI'm not good at saying my real thought\nI said you're so pretty i'm thinking of my Grandma's chair\nIf i'm being honest\nWon't it become weird?\n\nI want to tell you the truth\nBut it seems you like it\nWhen i say you're so pretty\n\nYour laugh\nIt's zero star out of five\nBut i won't tell you\nMy lies, as you can see\nMakes me nice\nPretend i was being honest\nWon't it makes you mad?\n\nI want to tell you the truth\nBut it seems you like it\nWhen i say you're so pretty\n\nI want to tell you the truth\nBut it seems you like it\nWhen i say you're so pretty\nBaby, if you're happy i'll keep my falsity\n\nSalah kayanya tuh\nHah"
-            ]
+            ],
+            "releaseDate": 2022,
+            "type": "Single", 
+            "thumbnail": "https://i.scdn.co/image/ab67616d00001e0298225b3d50907e025113a67a"
         }
     }
 }

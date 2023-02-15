@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel';
 
 function DarkCarousel() {
   return (
-    <Carousel variant="dark" slide>
+    <Carousel variant="dark">
       <Carousel.Item>
         <img
           className="d-block w-50 mx-auto"
@@ -26,7 +26,6 @@ function DarkCarousel() {
           src="https://firebasestorage.googleapis.com/v0/b/tigarist-df774.appspot.com/o/3.png?alt=media&token=c47c170c-5fc8-43e2-90c9-c675960f7784"
           alt="Third slide"
         />
-
       </Carousel.Item>
     </Carousel>
   );
