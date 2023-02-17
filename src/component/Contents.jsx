@@ -48,7 +48,7 @@ function Contents() {
         <Col>
           <Cards
             title={secSongTitle}
-            desc={`${secSongType}•${secSongReleaseDate}`}
+            desc={`${secSongType} • ${secSongReleaseDate}`}
             img={secSongThumbnail}
             phd={secSongTitle}
             link="/song2"
