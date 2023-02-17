@@ -6,20 +6,24 @@ import {
   MDBCardText,
   MDBCardHeader,
 } from 'mdb-react-ui-kit';
+import data from '../DATA.json';
 
+const {
+  performer, writers, producers, source,
+} = data.tigarist.song1;
 export default function Credit() {
   return (
     <MDBCard alignment="left" className="credit">
       <MDBCardHeader className="credit_title"><MDBCardTitle>Credit</MDBCardTitle></MDBCardHeader>
       <MDBCardBody>
         <MDBCardTitle>Performer</MDBCardTitle>
-        <MDBCardText>Tigarist</MDBCardText>
+        <MDBCardText>{performer}</MDBCardText>
         <MDBCardTitle>Writers</MDBCardTitle>
-        <MDBCardText>Zulfan Rahman</MDBCardText>
+        <MDBCardText>{writers}</MDBCardText>
         <MDBCardTitle>Producers</MDBCardTitle>
-        <MDBCardText>-</MDBCardText>
+        <MDBCardText>{producers}</MDBCardText>
         <MDBCardTitle>Source</MDBCardTitle>
-        <MDBCardText>Balconist</MDBCardText>
+        <MDBCardText>{source}</MDBCardText>
       </MDBCardBody>
     </MDBCard>
   );

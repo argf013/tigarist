@@ -8,7 +8,12 @@
             ],
             "releaseDate": 2022,
             "type": "Single",
+            "performer": "Tigarist",
+            "writers": "Zulfan Rahman",
+            "producers": "-",
+            "source": "Balconist",
             "thumbnail": "https://i.scdn.co/image/ab67616d00001e02466b641e27713881d3f8e2c7"
+            
         },
         "song2": {
             "id": 2,
@@ -18,7 +23,12 @@
             ],
             "releaseDate": 2022,
             "type": "Single", 
+            "performer": "Tigarist",
+            "writers": "Zulfan Rahman",
+            "producers": "-",
+            "source": "Balconist",
             "thumbnail": "https://i.scdn.co/image/ab67616d00001e0298225b3d50907e025113a67a"
+            
         }
     }
 }
