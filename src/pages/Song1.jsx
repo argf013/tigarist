@@ -7,7 +7,15 @@ import DOMPurify from 'dompurify';
 import Credit from '../component/Credit';
 import data from '../DATA.json';
 
-const { title, thumbnail, lyrics } = data.tigarist.song1;
+const {
+  title,
+  thumbnail,
+  lyrics,
+  performer,
+  writers,
+  source,
+  producers,
+} = data.tigarist.song1;
 const sanitizedLyrics = DOMPurify.sanitize(lyrics, { USE_PROFILES: { html: true } });
 function Song1() {
   useEffect(() => {
@@ -29,7 +37,12 @@ function Song1() {
 
       <p className="lyrics" dangerouslySetInnerHTML={{ __html: sanitizedLyrics }} />
       <hr />
-      <Credit />
+      <Credit
+        performer={performer}
+        writers={writers}
+        producers={producers}
+        source={source}
+      />
       <div className="back">
         <Button className="btnback" as={Link} to="/" variant="dark">Back</Button>
         <Button className="upBtn" onClick={() => window.scrollTo(0, 0)}>↑</Button>
