@@ -7,6 +7,7 @@ import {
   MDBCardText,
   MDBCardHeader,
 } from 'mdb-react-ui-kit';
+import '../styles/Credit.css';
 
 export default function Credit(props) {
   const {
@@ -21,9 +22,9 @@ export default function Credit(props) {
       <MDBCardBody>
         <MDBCardTitle>Performer</MDBCardTitle>
         <MDBCardText>{performer}</MDBCardText>
-        <MDBCardTitle>Writers</MDBCardTitle>
+        <MDBCardTitle>Writer</MDBCardTitle>
         <MDBCardText>{writers}</MDBCardText>
-        <MDBCardTitle>Producers</MDBCardTitle>
+        <MDBCardTitle>Producer</MDBCardTitle>
         <MDBCardText>{producers}</MDBCardText>
         <MDBCardTitle>Source</MDBCardTitle>
         <MDBCardText>{source}</MDBCardText>

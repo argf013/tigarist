@@ -45,8 +45,6 @@ function Song1() {
       />
       <div className="back">
         <Button className="btnback" as={Link} to="/" variant="dark">Back</Button>
-        <Button className="upBtn" onClick={() => window.scrollTo(0, 0)}>↑</Button>
-        <Button className="downBtn" onClick={() => window.scrollTo(0, document.body.scrollHeight)}>↓</Button>
       </div>
     </div>
   );
