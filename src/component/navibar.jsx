@@ -25,7 +25,7 @@ function Navibar() {
   return (
     <Navbar fixed="top" collapseOnSelect expand="lg" className={isScrolled ? 'shadow' : ''}>
       <Container>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar aria-controls="responsive-navbar-nav" />
         <Nav className="me-auto" />
         <OffCanvas />
         <Nav />
