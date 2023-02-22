@@ -1,34 +1,31 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/badge.css';
-import './styles/index.css';
-import './styles/navibar.css';
-import './styles/snow.css';
-import './styles/Songs.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import Home from './pages/Home';
-import Song1 from './pages/Song1';
-import Layout from './pages/Layout';
-import Song2 from './pages/Song2';
-import NoPage from './pages/NoPage';
+import './styles/index.css';
+
+const Home = lazy(() => import('./pages/Home'));
+const Song1 = lazy(() => import('./pages/Song1'));
+const Layout = lazy(() => import('./pages/Layout'));
+const Song2 = lazy(() => import('./pages/Song2'));
+const NoPage = lazy(() => import('./pages/NoPage'));
 
 export default function App() {
   return (
-
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="song1" element={<Song1 />} />
-          <Route path="song2" element={<Song2 />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-
+    <Router>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="song1" element={<Song1 />} />
+            <Route path="song2" element={<Song2 />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </Router>
   );
 }
 
