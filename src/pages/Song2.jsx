@@ -17,7 +17,9 @@ const {
   source,
   producers,
 } = data.tigarist.song2;
+
 const sanitizedLyrics = DOMPurify.sanitize(lyrics, { USE_PROFILES: { html: true } });
+
 function Song2() {
   useEffect(() => {
     window.scrollTo(0, 0);
