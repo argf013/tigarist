@@ -1,26 +1,32 @@
-/* eslint-disable no-alert */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { lazy, Suspense } from 'react';
 import { Card, Button } from 'react-bootstrap';
-import '../styles/card.css';
+import { Link } from 'react-router-dom';
 
-function Cards(
-  props,
-) {
+const LazyCardImg = lazy(() => import('react-bootstrap/CardImg'));
+
+function Cards(props) {
   return (
     <Card className="bg-light">
-      <Card.Img variant="top" src={props.img} alt={props.phd} />
+      <Suspense fallback={(
+        <div className="spinner-border text-center mx-auto" role="status">
+          <span className="visually-hidden text-center">Loading...</span>
+        </div>
+      )}
+      >
+        <LazyCardImg variant="top" src={props.img} alt={props.phd} />
+      </Suspense>
       <Card.Body>
-        <Card.Title style={{
-          color: 'black',
-          whiteSpace: 'nowrap',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          maxWidth: '15ch',
-        }}
+        <Card.Title
+          style={{
+            color: 'black',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            maxWidth: '15ch',
+          }}
         >
           {props.title}
         </Card.Title>

@@ -15,7 +15,12 @@ const NoPage = lazy(() => import('./pages/NoPage'));
 export default function App() {
   return (
     <Router>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={(
+        <div className="spinner-border text-center mx-auto" role="status">
+          <span className="visually-hidden text-center">Loading...</span>
+        </div>
+      )}
+      >
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />

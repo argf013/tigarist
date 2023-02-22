@@ -26,3 +26,7 @@ code {
   border: none;
   color: black;
 }
+
+.spinner-border {
+  margin-left: 50%!important;
+}
