@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import OffCanvas from './OffCanvas';
+import '../styles/navibar.css';
 
 function Navibar() {
   const [isScrolled, setIsScrolled] = useState(false);

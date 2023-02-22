@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import Credit from '../component/Credit';
 import data from '../DATA.json';
+import '../styles/Songs.css';
 
 const {
   title,

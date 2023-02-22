@@ -11,7 +11,7 @@ function Footer() {
                 <img src="https://i.ibb.co/mDtrtzt/314330820-671626804352255-6432558206755848623-n.jpg" alt="TIGARIST-LOGO-1" border="0" style={{ width: '44px' }} className="me-2" />
                 Tigarist
               </h6>
-              <p className="footerText">
+              <p className="footerText text-center">
                 Tigarist adalah band dari Jakarta Utara, Indonesia.
                 Yang beranggotakan Zulfan Rahman sebagai vokalis dan gitaris,
                 Sauqi Rahman sebagai perkusionis, dan Riyan Asmahudi sebagai bassis.
@@ -24,6 +24,12 @@ function Footer() {
         ℗ 2022
         {' '}
         <a className="text-reset fw-bold" href="https://www.instagram.com/bbalconist/" target="_blank" style={{ textDecoration: 'none' }} rel="noreferrer">Balconist</a>
+        {' '}
+        | Tigarist Created By
+        <a className="text-rest fw-bold" style={{ textDecoration: 'none', color: 'white' }} target="_blank" rel="noreferrer" href="https://github.com/argf013">
+          {' '}
+          Argf
+        </a>
       </div>
     </footer>
   );
