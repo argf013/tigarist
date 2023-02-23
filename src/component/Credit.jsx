@@ -6,21 +6,24 @@ import {
   MDBCardText,
   MDBCardHeader,
 } from 'mdb-react-ui-kit';
-import data from '../DATA.json';
+import '../styles/Credit.css';
 
-const {
-  performer, writers, producers, source,
-} = data.tigarist.song1;
-export default function Credit() {
+export default function Credit(props) {
+  const {
+    performer,
+    writers,
+    source,
+    producers,
+  } = props;
   return (
     <MDBCard alignment="left" className="credit">
       <MDBCardHeader className="credit_title"><MDBCardTitle>Credit</MDBCardTitle></MDBCardHeader>
       <MDBCardBody>
         <MDBCardTitle>Performer</MDBCardTitle>
         <MDBCardText>{performer}</MDBCardText>
-        <MDBCardTitle>Writers</MDBCardTitle>
+        <MDBCardTitle>Writer</MDBCardTitle>
         <MDBCardText>{writers}</MDBCardText>
-        <MDBCardTitle>Producers</MDBCardTitle>
+        <MDBCardTitle>Producer</MDBCardTitle>
         <MDBCardText>{producers}</MDBCardText>
         <MDBCardTitle>Source</MDBCardTitle>
         <MDBCardText>{source}</MDBCardText>

@@ -1,38 +1,65 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles/badge.css';
-import './styles/index.css';
-import './styles/navibar.css';
-import './styles/snow.css';
-import './styles/Songs.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, {
+  Suspense,
+  lazy,
+  useState,
+  useEffect,
+} from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import Home from './pages/Home';
-import Song1 from './pages/Song1';
-import Layout from './pages/Layout';
-import Song2 from './pages/Song2';
-import NoPage from './pages/NoPage';
+import './styles/index.css';
 
-export default function App() {
+const Home = lazy(() => import('./pages/Home'));
+const Songs = lazy(() => import('./pages/Songs'));
+const Layout = lazy(() => import('./pages/Layout'));
+const NoPage = lazy(() => import('./pages/NoPage'));
+
+function App() {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://my-json-server.typicode.com/astarte013/dummyAPI/db');
+      const jsonData = await response.json();
+      setData(jsonData);
+    }
+
+    fetchData();
+  }, []);
+
   return (
+    <Router>
+      <Suspense fallback={(
+        <div className="spinner-border text-center mx-auto" role="status">
+          <span className="visually-hidden text-center">Loading...</span>
+        </div>
+      )}
+      >
 
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="song1" element={<Song1 />} />
-          <Route path="song2" element={<Song2 />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            {data.songs && data.songs.map((songData) => (
+              <Route
+                key={songData.id}
+                path={`song/${songData.id}`}
+                element={<Songs songId={songData.id} />}
+              />
+            ))}
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
 
+      </Suspense>
+    </Router>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+
+root.render(
+  <App />,
+);
 
 serviceWorkerRegistration.unregister();

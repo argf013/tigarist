@@ -1,5 +1,6 @@
 import React from 'react';
 import Badge from 'react-bootstrap/Badge';
+import '../styles/badge.css';
 
 function BasicExample() {
   return (
