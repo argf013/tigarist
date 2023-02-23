@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
 import '../styles/Hero.css';
 import { ThreeDots as Loader } from 'react-loader-spinner';
@@ -20,7 +19,7 @@ function Hero() {
       <img
         src="https://i.ibb.co/rMptksX/hero.png"
         className="img-responsive"
-        alt="example image"
+        alt="example_image"
         onLoad={() => setIsImageLoaded(true)}
         onError={() => setHasError(true)}
       />

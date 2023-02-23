@@ -1,5 +1,3 @@
-/* eslint-disable react/no-danger */
-/* eslint-disable import/no-extraneous-dependencies */
 import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -8,24 +6,18 @@ import Credit from '../component/Credit';
 import data from '../DATA.json';
 import '../styles/Songs.css';
 
-const {
-  title,
-  thumbnail,
-  lyrics,
-  performer,
-  writers,
-  source,
-  producers,
-} = data.tigarist.song1;
-const sanitizedLyrics = DOMPurify.sanitize(lyrics, { USE_PROFILES: { html: true } });
-function Song1() {
+function Song({
+  title, thumbnail, lyrics, performer, writers, source, producers,
+}) {
+  const sanitizedLyrics = DOMPurify.sanitize(lyrics, { USE_PROFILES: { html: true } });
+
   useEffect(() => {
     window.scrollTo(0, 0);
     document.title = `${title}`;
   }, []);
 
   return (
-    <div className="song1">
+    <div className="songs">
       <h1 className="song_title" id="main">{title}</h1>
       <img
         className="thumbnail"
@@ -50,4 +42,27 @@ function Song1() {
     </div>
   );
 }
-export default Song1;
+
+function Songs({ songId }) {
+  const songs = Object.values(data.tigarist).filter((song) => song.id === songId).map((song) => (
+    <Song
+      key={song.id}
+      id={song.id}
+      title={song.title}
+      thumbnail={song.thumbnail}
+      lyrics={song.lyrics}
+      performer={song.performer}
+      writers={song.writers}
+      producers={song.producers}
+      source={song.source}
+    />
+  ));
+
+  return (
+    <>
+      {songs}
+    </>
+  );
+}
+
+export default Songs;
