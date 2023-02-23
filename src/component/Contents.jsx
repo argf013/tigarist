@@ -15,7 +15,7 @@ function Contents() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch('https://my-json-server.typicode.com/astarte013/dummyAPI/db');
+        const response = await fetch('https://my-json-server.typicode.com/argf013/tigarist/db');
         const data = await response.json();
         setSongs(data.songs);
         setLoading(false);
