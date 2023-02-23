@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
 import Credit from '../component/Credit';
-import data from '../DATA.json';
 import '../styles/Songs.css';
 
 function Song({
@@ -44,7 +43,19 @@ function Song({
 }
 
 function Songs({ songId }) {
-  const songs = Object.values(data.tigarist).filter((song) => song.id === songId).map((song) => (
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://my-json-server.typicode.com/argf013/tigarist/db')
+      .then((response) => response.json())
+      .then((datas) => {
+        setData(datas.songs);
+        setIsLoading(false);
+      });
+  }, []);
+
+  const songs = data.filter((song) => song.id === songId).map((song) => (
     <Song
       key={song.id}
       id={song.id}
@@ -60,7 +71,13 @@ function Songs({ songId }) {
 
   return (
     <>
-      {songs}
+      {isLoading ? (
+        <div className="spinner-border text-center mx-auto" role="status">
+          <span className="visually-hidden text-center">Loading...</span>
+        </div>
+      ) : (
+        songs
+      )}
     </>
   );
 }

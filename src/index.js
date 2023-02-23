@@ -1,11 +1,13 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
-import React, { Suspense, lazy } from 'react';
-import ReactDOM from 'react-dom';
+import React, {
+  Suspense,
+  lazy,
+  useState,
+  useEffect,
+} from 'react';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './styles/index.css';
-import data from './DATA.json';
 
 const Home = lazy(() => import('./pages/Home'));
 const Songs = lazy(() => import('./pages/Songs'));
@@ -13,6 +15,18 @@ const Layout = lazy(() => import('./pages/Layout'));
 const NoPage = lazy(() => import('./pages/NoPage'));
 
 function App() {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://my-json-server.typicode.com/argf013/tigarist/db');
+      const jsonData = await response.json();
+      setData(jsonData);
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <Router>
       <Suspense fallback={(
@@ -25,13 +39,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            {Object.entries(data).map(([, artistData]) => Object.entries(artistData).map(([, songData]) => (
+            {data.songs && data.songs.map((songData) => (
               <Route
                 key={songData.id}
                 path={`song/${songData.id}`}
                 element={<Songs songId={songData.id} />}
               />
-            )))}
+            ))}
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
@@ -41,6 +55,11 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
 
-serviceWorkerRegistration.register();
+root.render(
+  <App />,
+);
+
+serviceWorkerRegistration.unregister();
