@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import React from 'react';
 import '../styles/App.css';
 import Container from 'react-bootstrap/Container';
@@ -9,80 +8,52 @@ import BasicExample from './badge';
 import Avail from './Avail';
 import data from '../DATA.json';
 
-const {
-  title: firstSongTitle,
-  type: firstSongType,
-  releaseDate: firstSongReleaseDate,
-  thumbnail: firstSongThumbnail,
-} = data.tigarist.song1;
-
-const {
-  title: secSongTitle,
-  type: secSongType,
-  releaseDate: secSongReleaseDate,
-  thumbnail: secSongThumbnail,
-} = data.tigarist.song2;
-
 const notAvailable = () => {
   alert('Not Available Yet');
 };
 
 const placeImg = 'https://e7.pngegg.com/pngimages/649/415/png-clipart-compact-disc-compact-disc-material-data-cd-disk-electronics-computer-thumbnail.png';
+
 function Contents() {
+  const songs = data.tigarist; // mengambil data dari file JSON
+
   return (
     <Container>
       <Avail />
       <BasicExample />
       <Row xl={4}>
-        <Col>
-          <Cards
-            title={firstSongTitle}
-            desc={`${firstSongType} • ${firstSongReleaseDate}`}
-            img={firstSongThumbnail}
-            phd={firstSongTitle}
-            link="/song1"
-            btnTxt="Read More"
-          />
-        </Col>
+        {Object.keys(songs).map((songKey) => { // loop melalui data untuk membuat kartu lagu
+          const song = songs[songKey];
 
-        <Col>
-          <Cards
-            title={secSongTitle}
-            desc={`${secSongType} • ${secSongReleaseDate}`}
-            img={secSongThumbnail}
-            phd={secSongTitle}
-            link="/song2"
-            btnTxt="Read More"
-          />
-        </Col>
-
-        <Col>
-          <Cards
-            title="Coming Soon.."
-            desc="---"
-            img={placeImg}
-            phd="Untitled"
-            link="/"
-            btnTxt="Unavailable"
-            notAvailable={notAvailable}
-          />
-        </Col>
-
-        <Col>
-          <Cards
-            title="Coming Soon.."
-            desc="---"
-            img={placeImg}
-            phd="Untitled"
-            link="/"
-            btnTxt="Unavailable"
-            notAvailable={notAvailable}
-          />
-        </Col>
+          return (
+            <Col key={song.title}>
+              <Cards
+                title={song.title}
+                desc={`${song.type} • ${song.releaseDate}`}
+                img={song.thumbnail}
+                phd={song.title}
+                link={`song/${song.id}`}
+                btnTxt="Read More"
+              />
+            </Col>
+          );
+        })}
+        {/* Untuk menambahkan kartu yang belum tersedia */}
+        {[...Array(2)].map((_, index) => (
+          <Col key={`placeholder-${index}`}>
+            <Cards
+              title="Coming Soon.."
+              desc="---"
+              img={placeImg}
+              phd="Untitled"
+              link="/"
+              btnTxt="Unavailable"
+              notAvailable={notAvailable}
+            />
+          </Col>
+        ))}
       </Row>
-
     </Container>
-
   );
 }
 

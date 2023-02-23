@@ -1,18 +1,18 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-unused-vars */
+/* eslint-disable max-len */
 import React, { Suspense, lazy } from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import './styles/index.css';
+import data from './DATA.json';
 
 const Home = lazy(() => import('./pages/Home'));
-const Song1 = lazy(() => import('./pages/Song1'));
+const Songs = lazy(() => import('./pages/Songs'));
 const Layout = lazy(() => import('./pages/Layout'));
-const Song2 = lazy(() => import('./pages/Song2'));
 const NoPage = lazy(() => import('./pages/NoPage'));
 
-export default function App() {
+function App() {
   return (
     <Router>
       <Suspense fallback={(
@@ -21,20 +21,26 @@ export default function App() {
         </div>
       )}
       >
+
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="song1" element={<Song1 />} />
-            <Route path="song2" element={<Song2 />} />
+            {Object.entries(data).map(([, artistData]) => Object.entries(artistData).map(([, songData]) => (
+              <Route
+                key={songData.id}
+                path={`song/${songData.id}`}
+                element={<Songs songId={songData.id} />}
+              />
+            )))}
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
+
       </Suspense>
     </Router>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+ReactDOM.render(<App />, document.getElementById('root'));
 
-serviceWorkerRegistration.unregister();
+serviceWorkerRegistration.register();
