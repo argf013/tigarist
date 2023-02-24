@@ -19,7 +19,7 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch('https://json.tigarist.tech/songs/');
+      const response = await fetch('https://json.tigarist.tech/songs');
       const jsonData = await response.json();
       setData(jsonData);
     }
