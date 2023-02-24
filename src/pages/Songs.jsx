@@ -47,7 +47,7 @@ function Songs({ songId }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://my-json-server.typicode.com/argf013/tigarist/db')
+    fetch('https://json.tigarist.tech/songs/')
       .then((response) => response.json())
       .then((datas) => {
         setData(datas.songs);
