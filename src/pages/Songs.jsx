@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import DOMPurify from 'dompurify';
+import _ from 'lodash';
 import Credit from '../component/Credit';
 import '../styles/Songs.css';
 
@@ -55,19 +56,8 @@ function Songs({ songId }) {
       });
   }, []);
 
-  const songs = data.filter((song) => song.id === songId).map((song) => (
-    <Song
-      key={song.id}
-      id={song.id}
-      title={song.title}
-      thumbnail={song.thumbnail}
-      lyrics={song.lyrics}
-      performer={song.performer}
-      writers={song.writers}
-      producers={song.producers}
-      source={song.source}
-    />
-  ));
+  const song = _.find(data, { id: songId });
+  const songs = song ? [<Song key={song.id} {...song} />] : [];
 
   return (
     <>

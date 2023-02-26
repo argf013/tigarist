@@ -1,9 +1,9 @@
-/* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 import '../styles/App.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { times } from 'lodash';
 import Cards from './card';
 import BasicExample from './badge';
 import Avail from './Avail';
@@ -57,7 +57,7 @@ function Contents() {
             />
           </Col>
         ))}
-        {[...Array(2)].map((_, index) => (
+        {times(2, (index) => (
           <Col key={`placeholder-${index}`}>
             <Cards
               title="Coming Soon.."

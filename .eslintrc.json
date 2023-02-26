@@ -22,11 +22,12 @@
         "react/jsx-filename-extension": "off",
         "react/jsx-no-useless-fragment": "off",
         "react/prop-types": "off",
-        "import/no-extraneous-dependencies": "off",
         "react/no-array-index-key": "off",
         "react/destructuring-assignment": "off",
         "no-alert": "off",
         "import/no-cycle": "off",
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "react/jsx-props-no-spreading": "off",
+        "no-console": "off"
     }
 }
